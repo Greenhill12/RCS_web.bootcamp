@@ -1,0 +1,225 @@
+:root {
+    /* start of variables */
+    --color-lightblue: lightblue;
+    --color-blue: blue;
+    --color-darkblue: darkblue;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    /* end of variables */
+}
+
+body, main {
+    background-color: var(--color-white) !important;
+}
+
+header > div, main > div, footer {
+    background-color: var(--color-blue);
+    border: 1px solid var(--color-black);
+}
+
+.header > div, .hero > div, .body > div, .sidebar > div {
+    background-color: var(--color-lightblue);
+    height: 50px;
+    margin: 10px;
+}
+
+.ad, .body > .body-ad {
+    background-color: var(--color-darkblue);
+    color: var(--color-white);
+    padding-top: 10px;
+}
+
+.wrapper > header {
+    grid-area: header;
+    background-color: var(--color-blue);
+}
+
+.wrapper > main {
+    grid-area: main;
+    background-color: var(--color-blue);
+}
+
+.wrapper > footer {
+    grid-area: footer;
+    background-color: var(--color-blue);
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto 50px;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+}
+
+.header > .brand {
+    grid-area: brand;
+}
+
+.header > .global-nav {
+    grid-area: global-nav;
+}
+
+.header > .tools {
+    grid-area: tools;
+}
+
+.header {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 5fr 3fr;
+    grid-template-rows: 20px auto auto;
+    grid-template-areas: 
+    ". ."
+    "brand brand"
+    "global-nav tools";
+}
+
+main > .hero {
+    grid-area: hero;
+}
+
+main > .ad {
+    grid-area: ad;
+}
+
+main > .body {
+    grid-area: body;
+}
+
+main > .sidebar {
+    grid-area: sidebar;
+}
+
+main {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "hero"
+    "body";
+}
+
+.hero > .hero-feature {
+    grid-area: hero-feature;
+}
+
+.hero > .hero-call-to-action {
+    grid-area: hero-call-to-action;
+}
+
+.hero {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 100%;
+    grid-template-rows: 20px auto;
+    grid-template-areas:
+    "." 
+    "hero-call-to-action";
+}
+
+.body > .article-feature {
+    grid-area: article-feature;
+}
+
+.body > .body-ad {
+    grid-area: body-ad;
+}
+
+.body > .article-listing {
+    grid-area: article-listing;
+}
+
+.body {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 100%;
+    grid-template-rows: 20px auto auto auto;
+    grid-template-areas:
+    "." 
+    "article-feature"
+    "body-ad"
+    "article-listing";
+}
+
+.ad, .sidebar, .hero-feature {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .header {
+        grid-template-columns: 1fr 5fr 1fr;
+        grid-template-rows: 20px auto;
+        grid-template-areas: 
+        ". . ."
+        "brand global-nav tools";
+    }
+
+    main {
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+        "hero"
+        "body"
+        "sidebar";
+    }
+
+    .hero {
+        grid-template-rows: 20px 1fr 1fr;
+        grid-template-areas:
+        "." 
+        "hero-feature"
+        "hero-call-to-action";
+    }
+
+    .body {
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: 20px auto auto;
+        grid-template-areas:
+        ". ." 
+        "article-feature body-ad"
+        "article-listing article-listing";
+    }
+
+    .sidebar, .hero-feature {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    main {
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+        "hero ad"
+        "body sidebar";
+    }
+    
+    .hero {
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 20px auto;
+        grid-template-areas:
+        ". ." 
+        "hero-feature hero-call-to-action";
+    }
+
+    .body > .body-ad {
+        display: none;
+    }
+
+    .body {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 20px auto;
+        grid-template-areas:
+        ". ." 
+        "article-feature article-listing";
+    }
+
+    .ad {
+        display: block;
+    }
+}

@@ -1,0 +1,43 @@
+:root {
+     --color-blue: hsl(235, 30%, 73%);
+     --color-red: hsl(360, 72%, 65%);
+}
+
+body {
+    background: linear-gradient(var(--color-red), var(--color-blue));
+    min-height: 100vh;
+    text-align: center;
+}
+
+h2 {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: medium;
+}
+
+input[type="text"], input[type="number"] {
+    background-color: var(--color-blue);   
+  }
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box {
+    width: 100px;
+    height: 10vh;
+    margin: 5px;
+}
+
+.box:hover {
+    
+}
+
+.red-box {
+    background-color: burlywood;
+}
+
+.green-box {
+    background-color: aquamarine;
+}

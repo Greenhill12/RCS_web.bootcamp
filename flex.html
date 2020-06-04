@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Examples</title>
+</head>
+<style>
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .child {
+        width: 6rem;
+        height: 6rem;
+        border: 0.25rem solid aquamarine;
+        margin: 0.5rem;
+    }
+
+    .child3 {
+        background-color: silver;
+        display: flex;
+
+    }
+    .gchild {
+        width: 25%;
+        height: 4rem;        
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+</style>
+<body>
+    <header>
+        <h1>Flex Examples</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="child child1">Kaste 01</div>
+            <div class="child child2">Kaste 02</div>
+            <div class="child child3">
+                <div class="gchild">Grandchild 01</div>
+                <div class="gchild">Grandchild 02</div>
+                <div class="gchild">Grandchild 03</div>
+            </div>
+            <div class="child child4">Kaste 04</div>
+            <div class="child child5">Kaste 05</div>
+        </div>
+    </main>
+    <footer>C 2020</footer>
+</body>
+</html>
