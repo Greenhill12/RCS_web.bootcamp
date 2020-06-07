@@ -1,11 +1,18 @@
 :root {
-     --color-blue: hsl(235, 30%, 73%);
-     --color-red: hsl(360, 72%, 65%);
+    --color-blue: hsl(235, 30%, 73%);
+    --color-red: hsl(360, 72%, 65%);
+    --color-box-fizz: hsl(118, 100%, 50%);
+    --color-box-buzz: hsl(240, 100%, 50%);
+    --color-box-normal: hsl(235, 30%, 73%);
+    --color-box-shadow: hsla(0, 0%, 0%, 0.2);
 }
 
 body {
     background: linear-gradient(var(--color-red), var(--color-blue));
     min-height: 100vh;
+}
+
+h1 {
     text-align: center;
 }
 
@@ -13,31 +20,89 @@ h2 {
     writing-mode: vertical-rl;
     text-orientation: upright;
     font-size: medium;
+    text-align: center;
+    padding-top: 10px;
 }
-
-input[type="text"], input[type="number"] {
-    background-color: var(--color-blue);   
-  }
 
 main {
     display: flex;
     flex-wrap: wrap;
 }
 
+.wrapper {
+    display: grid;
+    grid-template-columns: 50px 5fr 1fr;
+    grid-template-rows: auto;
+    justify-items: start;
+    line-height: 1.5;
+}
+
+.color-fizz {
+    color: var(--color-box-fizz);
+}
+
+.color-buzz {
+    color: var(--color-box-buzz);
+}
+
 .box {
+    background-color: var(--color-box-normal);
     width: 100px;
-    height: 10vh;
+    height: 100px;
     margin: 5px;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 3vh;
+    font-size: larger;
+    font-weight: 700;
+    border: 1px solid var(--color-box-shadow);
 }
 
 .box:hover {
-    
+    box-shadow: 0 4px 8px 0 var(--color-box-shadow), 0 6px 20px 0 var(--color-box-shadow);
 }
 
-.red-box {
-    background-color: burlywood;
+.box.box-fizz {
+    background-color: var(--color-box-fizz);
 }
 
-.green-box {
-    background-color: aquamarine;
+.box.box-buzz {
+    background-color: var(--color-box-buzz);
+}
+
+.box.box-fizz-buzz {
+    animation-name: fizz-buzz;
+    animation-duration: 500ms;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fizz-buzz {
+    0% {
+        background: repeating-linear-gradient(45deg, var(--color-box-fizz) 0px, var(--color-box-fizz) 10px, var(--color-box-buzz) 10px, var(--color-box-buzz) 20px);
+    }
+    50% {
+        background: repeating-linear-gradient(45deg, var(--color-box-buzz) 0px, var(--color-box-buzz) 10px, var(--color-box-fizz) 10px, var(--color-box-fizz) 20px);
+    }
+    100% {
+        background: repeating-linear-gradient(45deg, var(--color-box-fizz) 0px, var(--color-box-fizz) 10px, var(--color-box-buzz) 10px, var(--color-box-buzz) 20px);
+    }
+}
+
+input[type="text"],
+input[type="number"],
+input[type="color"] {
+    background-color: var(--color-blue);
+    width: 70px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+button:disabled {
+    pointer-events: none;
+}
+
+.btn {
+    margin-top: 5px;
+    width: 70px;
+    height: 65px;
 }
