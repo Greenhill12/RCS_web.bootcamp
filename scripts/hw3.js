@@ -39,6 +39,9 @@ function addEventHandlers(btnCreate, btnDelete, innerCont, fieldMin, fieldMax, f
     fieldFizz.addEventListener("change", function () {
         onValueChange(fieldFizz, FIZZ_BUZZ_MIN, FIZZ_BUZZ_MAX);
     });
+    fieldBuzz.addEventListener("change", function () {
+        onValueChange(fieldBuzz, FIZZ_BUZZ_MIN, FIZZ_BUZZ_MAX);
+    });
 }
 
 function addElement(parent, tag, id, classList, content) {
